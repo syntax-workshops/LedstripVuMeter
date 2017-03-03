@@ -19,6 +19,7 @@
 		D588B5341E69DBB90036D46E /* LedStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588B5311E69DBB90036D46E /* LedStrip.swift */; };
 		D588B5351E69DBB90036D46E /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588B5321E69DBB90036D46E /* UDPClient.swift */; };
 		D588B5361E69DBB90036D46E /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588B5331E69DBB90036D46E /* UIColor+RGB.swift */; };
+		D5AFF4071E69F499003F399C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFF4061E69F499003F399C /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		D588B5311E69DBB90036D46E /* LedStrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedStrip.swift; sourceTree = "<group>"; };
 		D588B5321E69DBB90036D46E /* UDPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDPClient.swift; sourceTree = "<group>"; };
 		D588B5331E69DBB90036D46E /* UIColor+RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
+		D5AFF4061E69F499003F399C /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				D588B5331E69DBB90036D46E /* UIColor+RGB.swift */,
 				D588B52A1E69C0AD0036D46E /* VUMeter.swift */,
 				D588B52F1E69C0D60036D46E /* VUMeterViewController.swift */,
+				D5AFF4061E69F499003F399C /* Color.swift */,
 			);
 			path = VUMeter;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			files = (
 				D588B5351E69DBB90036D46E /* UDPClient.swift in Sources */,
 				D588B5361E69DBB90036D46E /* UIColor+RGB.swift in Sources */,
+				D5AFF4071E69F499003F399C /* Color.swift in Sources */,
 				D588B5341E69DBB90036D46E /* LedStrip.swift in Sources */,
 				D588B5301E69C0D60036D46E /* VUMeterViewController.swift in Sources */,
 				D588B52B1E69C0AD0036D46E /* VUMeter.swift in Sources */,
@@ -542,6 +546,7 @@
 				D588B5231E69C0A60036D46E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D588B5241E69C0A60036D46E /* Build configuration list for PBXNativeTarget "VUMeterTests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +555,7 @@
 				D588B5261E69C0A60036D46E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D588B5271E69C0A60036D46E /* Build configuration list for PBXNativeTarget "VUMeterUITests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +564,7 @@
 				D588B5291E69C0A60036D46E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

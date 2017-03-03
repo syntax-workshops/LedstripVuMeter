@@ -82,7 +82,7 @@ class VUMeter {
     recorder.updateMeters()
     let decibels = recorder.averagePower(forChannel: 0)
     delegate?.didUpdateResult(decibels: decibels)
-    print("\(decibels)dB")
+//    print("\(decibels)dB")
   }
 }
 

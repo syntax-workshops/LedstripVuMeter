@@ -9,17 +9,25 @@
 import UIKit
 import AVFoundation
 
-struct MeterState {
-  let referenceDb: Float = -60
-  var running: Bool = false
-}
-
 class VUMeterViewController: UIViewController {
 
   var vuMeter: VUMeter!
   var ledStrip: LEDStrip!
   var running = false { didSet { stateChanged() } }
-  let minDecibels: Float = -40
+  let minDecibels: Float = -90
+  var color: Color = Color(red: 255, green: 0, blue: 0)
+  var colorTimer: Timer? = nil
+  let colors = [
+    Color(red: 0, green: 0, blue: 0),
+    Color(red: 255, green: 0, blue: 0),
+    Color(red: 0, green: 255, blue: 0),
+    Color(red: 0, green: 0, blue: 255),
+    Color(red: 255, green: 255, blue: 0),
+    Color(red: 255, green: 0, blue: 255),
+    Color(red: 0, green: 255, blue: 255),
+    Color(red: 255, green: 128, blue: 0),
+    Color(red: 128, green: 0, blue: 128),
+  ]
 
   @IBOutlet weak var progressView: UIProgressView!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -32,6 +40,19 @@ class VUMeterViewController: UIViewController {
     vuMeter.delegate = self
 
     ledStrip = App.ledStrip
+
+    colorTimer = Timer(timeInterval: 3, repeats: true, block: self.selectRandomColor)
+    RunLoop.current.add(colorTimer!, forMode: .defaultRunLoopMode)
+  }
+
+  func selectRandomColor(timer: Timer) {
+    var randomIndex = Int(arc4random_uniform(UInt32(colors.count)))
+    var newColor = colors[randomIndex]
+    while newColor == color {
+      randomIndex = Int(arc4random_uniform(UInt32(colors.count)))
+      newColor = colors[randomIndex]
+    }
+    color = colors[randomIndex]
   }
 
   private func stateChanged() {
@@ -48,22 +69,29 @@ class VUMeterViewController: UIViewController {
   
   @IBAction func toggleButtonPressed(_ sender: UIButton) {
     running = !running
-//    if running {
-//      vuMeter.startUpdating(success: {}, failure: {})
-//      activityIndicator.startAnimating()
-//      sender.titleLabel?.text = "Stop"
-//    } else {
-//      vuMeter.stopUpdating()
-//      activityIndicator.stopAnimating()
-//      sender.titleLabel?.text = "Start"
-//    }
+  }
+
+  fileprivate func message(forLevel level: Float, ledCount: Int, reversed: Bool = false) -> [UInt8] {
+    let activeLeds = max(Int(level * Float(ledCount) * 2), 0)
+    let remainingLeds = max(ledCount - activeLeds, 0)
+    var message = [UInt8]()
+    for _ in 0...activeLeds {
+      message.append(color.green)
+      message.append(color.red)
+      message.append(color.blue)
+    }
+    let fill: [UInt8] = Array(repeating: 0, count: remainingLeds * 3)
+    if reversed {
+      return fill + message
+    } else {
+      return message + fill
+    }
   }
 
   fileprivate func updateLedStrip(level: Float) {
-    let activeLeds = Int(level * Float(ledStrip.ledcount))
-    let remainingLeds = ledStrip.ledcount - activeLeds
-    let message: [UInt8] = Array(repeating: 255, count: activeLeds * 3) + Array(repeating: 0, count: remainingLeds * 3)
-    ledStrip.send(message)
+    let message1 = message(forLevel: level, ledCount: ledStrip.ledcount / 2)
+    let message2 = message(forLevel: level, ledCount: ledStrip.ledcount / 2, reversed: true)
+    ledStrip.send(message1 + message2)
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -80,7 +108,7 @@ class VUMeterViewController: UIViewController {
 extension VUMeterViewController: VUMeterDelegate {
   func didUpdateResult(decibels: Float) {
     let level = decibelsToLinear(decibels: decibels, minDecibels: minDecibels)
-    print("level: \(level)")
+//    print("level: \(level)")
     progressView.setProgress(level, animated: true)
     updateLedStrip(level: level)
   }

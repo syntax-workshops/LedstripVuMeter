@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-    App.vuMeter = VUMeter(interval: 0.05)!
+    App.vuMeter = VUMeter(interval: 1/25)!
     App.ledStrip = LEDStrip(ipAddress: "192.168.1.154", count: 150)
 
     UIApplication.shared.isIdleTimerDisabled = true
