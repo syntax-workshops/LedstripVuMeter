@@ -8,14 +8,23 @@
 
 import UIKit
 
+struct App {
+  static var vuMeter: VUMeter!
+  static var ledStrip: LEDStrip!
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+
+    App.vuMeter = VUMeter(interval: 0.05)!
+    App.ledStrip = LEDStrip(ipAddress: "192.168.1.154", count: 150)
+
+    UIApplication.shared.isIdleTimerDisabled = true
+
     return true
   }
 
@@ -31,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func applicationWillEnterForeground(_ application: UIApplication) {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    UIApplication.shared.isIdleTimerDisabled = true
   }
 
   func applicationDidBecomeActive(_ application: UIApplication) {

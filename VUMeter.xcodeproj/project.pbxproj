@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		D588B4FD1E69C0A60036D46E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588B4FC1E69C0A60036D46E /* AppDelegate.swift */; };
-		D588B4FF1E69C0A60036D46E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588B4FE1E69C0A60036D46E /* ViewController.swift */; };
 		D588B5021E69C0A60036D46E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B5001E69C0A60036D46E /* Main.storyboard */; };
 		D588B5041E69C0A60036D46E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D588B5031E69C0A60036D46E /* Assets.xcassets */; };
 		D588B5071E69C0A60036D46E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D588B5051E69C0A60036D46E /* LaunchScreen.storyboard */; };
 		D588B5121E69C0A60036D46E /* VUMeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588B5111E69C0A60036D46E /* VUMeterTests.swift */; };
 		D588B51D1E69C0A60036D46E /* VUMeterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588B51C1E69C0A60036D46E /* VUMeterUITests.swift */; };
+		D588B52B1E69C0AD0036D46E /* VUMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588B52A1E69C0AD0036D46E /* VUMeter.swift */; };
+		D588B52E1E69C0BE0036D46E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D588B52D1E69C0BE0036D46E /* AVFoundation.framework */; };
+		D588B5301E69C0D60036D46E /* VUMeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588B52F1E69C0D60036D46E /* VUMeterViewController.swift */; };
+		D588B5341E69DBB90036D46E /* LedStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588B5311E69DBB90036D46E /* LedStrip.swift */; };
+		D588B5351E69DBB90036D46E /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588B5321E69DBB90036D46E /* UDPClient.swift */; };
+		D588B5361E69DBB90036D46E /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588B5331E69DBB90036D46E /* UIColor+RGB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,6 @@
 /* Begin PBXFileReference section */
 		D588B4F91E69C0A60036D46E /* VUMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VUMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D588B4FC1E69C0A60036D46E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D588B4FE1E69C0A60036D46E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D588B5011E69C0A60036D46E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D588B5031E69C0A60036D46E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D588B5061E69C0A60036D46E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,12 @@
 		D588B5181E69C0A60036D46E /* VUMeterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VUMeterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D588B51C1E69C0A60036D46E /* VUMeterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VUMeterUITests.swift; sourceTree = "<group>"; };
 		D588B51E1E69C0A60036D46E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D588B52A1E69C0AD0036D46E /* VUMeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VUMeter.swift; sourceTree = "<group>"; };
+		D588B52D1E69C0BE0036D46E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D588B52F1E69C0D60036D46E /* VUMeterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VUMeterViewController.swift; sourceTree = "<group>"; };
+		D588B5311E69DBB90036D46E /* LedStrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedStrip.swift; sourceTree = "<group>"; };
+		D588B5321E69DBB90036D46E /* UDPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDPClient.swift; sourceTree = "<group>"; };
+		D588B5331E69DBB90036D46E /* UIColor+RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D588B52E1E69C0BE0036D46E /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +92,7 @@
 				D588B5101E69C0A60036D46E /* VUMeterTests */,
 				D588B51B1E69C0A60036D46E /* VUMeterUITests */,
 				D588B4FA1E69C0A60036D46E /* Products */,
+				D588B52C1E69C0BE0036D46E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +110,15 @@
 			isa = PBXGroup;
 			children = (
 				D588B4FC1E69C0A60036D46E /* AppDelegate.swift */,
-				D588B4FE1E69C0A60036D46E /* ViewController.swift */,
 				D588B5001E69C0A60036D46E /* Main.storyboard */,
 				D588B5031E69C0A60036D46E /* Assets.xcassets */,
 				D588B5051E69C0A60036D46E /* LaunchScreen.storyboard */,
 				D588B5081E69C0A60036D46E /* Info.plist */,
+				D588B5311E69DBB90036D46E /* LedStrip.swift */,
+				D588B5321E69DBB90036D46E /* UDPClient.swift */,
+				D588B5331E69DBB90036D46E /* UIColor+RGB.swift */,
+				D588B52A1E69C0AD0036D46E /* VUMeter.swift */,
+				D588B52F1E69C0D60036D46E /* VUMeterViewController.swift */,
 			);
 			path = VUMeter;
 			sourceTree = "<group>";
@@ -123,6 +139,14 @@
 				D588B51E1E69C0A60036D46E /* Info.plist */,
 			);
 			path = VUMeterUITests;
+			sourceTree = "<group>";
+		};
+		D588B52C1E69C0BE0036D46E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D588B52D1E69C0BE0036D46E /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +286,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D588B4FF1E69C0A60036D46E /* ViewController.swift in Sources */,
+				D588B5351E69DBB90036D46E /* UDPClient.swift in Sources */,
+				D588B5361E69DBB90036D46E /* UIColor+RGB.swift in Sources */,
+				D588B5341E69DBB90036D46E /* LedStrip.swift in Sources */,
+				D588B5301E69C0D60036D46E /* VUMeterViewController.swift in Sources */,
+				D588B52B1E69C0AD0036D46E /* VUMeter.swift in Sources */,
 				D588B4FD1E69C0A60036D46E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
