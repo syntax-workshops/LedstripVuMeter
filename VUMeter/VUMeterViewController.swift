@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 class VUMeterViewController: UIViewController {
 
@@ -108,7 +107,6 @@ class VUMeterViewController: UIViewController {
 extension VUMeterViewController: VUMeterDelegate {
   func didUpdateResult(decibels: Float) {
     let level = decibelsToLinear(decibels: decibels, minDecibels: minDecibels)
-//    print("level: \(level)")
     progressView.setProgress(level, animated: true)
     updateLedStrip(level: level)
   }
