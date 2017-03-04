@@ -18,7 +18,7 @@ class VUMeterViewController: UIViewController {
   var color: Color = Color(red: 255, green: 0, blue: 0)
   var colorTimer: Timer? = nil
   let colors = [
-    Color(red: 0, green: 0, blue: 0),
+    Color(red: 255, green: 255, blue: 255),
     Color(red: 255, green: 0, blue: 0),
     Color(red: 0, green: 255, blue: 0),
     Color(red: 0, green: 0, blue: 255),
